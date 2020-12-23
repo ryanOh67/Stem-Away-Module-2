@@ -31,7 +31,7 @@ res = req.urlopen(url)
 soup = BeautifulSoup(res, 'html.parser')
 
 
-
+y =2
 comments = soup.findAll('div',{'class': 'post', 'itemprop': 'articleBody', 'p': ''})
 
 #comments = soup.findAll('div',{'class': 'post', 'itemprop': 'articleBody'})
