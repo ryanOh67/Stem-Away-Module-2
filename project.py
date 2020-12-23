@@ -48,7 +48,7 @@ commentLikes.pop(0)
         #print(i.get_text())
     
 
-
+x =1
 file = open('helloRyan.csv','w', newline = '')
 writer = csv.writer(file)
 
