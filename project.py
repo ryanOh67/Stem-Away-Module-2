@@ -31,13 +31,14 @@ res = req.urlopen(url)
 soup = BeautifulSoup(res, 'html.parser')
 
 
-y =2
+
+
 comments = soup.findAll('div',{'class': 'post', 'itemprop': 'articleBody', 'p': ''})
 
 #comments = soup.findAll('div',{'class': 'post', 'itemprop': 'articleBody'})
 comments.pop(0)
 #for i in comments:
-    #print(len(i.get_text()))           #algorithm for finding all the texts
+   # print((i.get_text()))           #algorithm for finding all the texts
 
 commentLikes = soup.findAll(class_= "post-likes")
 commentLikes.pop(0)
@@ -49,10 +50,11 @@ commentLikes.pop(0)
     
 
 x =1
-file = open('helloRyan.csv','w', newline = '')
+
+file = open('helloRyan.csv','w', -1, "utf-8", newline = '')
 writer = csv.writer(file)
 
-writer.writerow(['Length', 'Likes', 'Date'])
+writer.writerow(['Length', 'Likes', 'Date', 'Post'])
 
 date = soup.findAll(class_= "post-time")
 date.pop(0)
@@ -63,15 +65,16 @@ date.pop(0)
 counter = 0
 
 for i in comments:
-    commentlength = len(i.get_text())
+    sampleComment = i.get_text()
+    commentlength = len(sampleComment)
 
 
 
     if commentLikes[counter].get_text() == "":
-        writer.writerow([commentlength, "0 Like", date[counter].get_text()])
+        writer.writerow([commentlength, "0 Like", date[counter].get_text(),sampleComment])
     else:
         commentpostlike = commentLikes[counter].get_text()
-        writer.writerow([commentlength, commentpostlike, date[counter].get_text()])
+        writer.writerow([commentlength, commentpostlike, date[counter].get_text(), sampleComment])
 
     counter= counter+1
 
