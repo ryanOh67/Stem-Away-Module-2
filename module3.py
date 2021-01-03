@@ -16,10 +16,14 @@ import re
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import TfidfTransformer
+from sklearn.metrics import f1_score
+
+from sklearn.metrics import classification_report
+
 #%matplotlib inline
 
 
-data = pd.read_csv('helloRyan.csv')
+data = pd.read_csv('helloRyan.csv', dtype = str)
 data.head()
 #print('hi')
 #print(data['Date'][2])
@@ -34,27 +38,30 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_
 X_train.head()  #line 113
 y_train.head()
 
-nb = Pipeline([('vect', CountVectorizer()),
+
+nb = Pipeline([('vect', CountVectorizer(lowercase=False)),
                ('tfidf', TfidfTransformer()),
                ('clf', MultinomialNB()),
               ])
 nb.fit(X_train, y_train)
 
 
-from sklearn.metrics import classification_report
-y_pred = nb.predict(X_test)
 
+y_pred = nb.predict(X_test)
 
 #relationship between the length of the post and the likes it gets
 
-my_categories = ['44', '47', '98', '38', '208','356', '60', '1504', '861','27','215']
+my_categories = ['44','47','98','38','38','356','60','1504','861','27','215']
 
 
 print('accuracy %s' % accuracy_score(y_pred, y_test))
 res1311 = accuracy_score(y_pred, y_test)
+
 print(classification_report(y_test, y_pred,target_names=my_categories)) #define my_categories
 
-#X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state = 42)
+
+
+
 
 # go to the bug thing, stage change, and look at the blue bar on the botrtom of the  screen to push changes
 #recommends the length of the post?
