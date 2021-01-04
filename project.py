@@ -54,7 +54,7 @@ x =1
 file = open('helloRyan.csv','w', -1, "utf-8", newline = '')
 writer = csv.writer(file)
 
-writer.writerow(['Length', 'Likes', 'Date', 'Post'])
+writer.writerow(['Length', 'Likes', 'Date', 'Post', 'LengthofContent'])
 
 date = soup.findAll(class_= "post-time")
 date.pop(0)
@@ -65,16 +65,27 @@ date.pop(0)
 counter = 0
 
 for i in comments:
+    sampleLength = ""
+
+
     sampleComment = i.get_text()
     commentlength = len(sampleComment)
+    if commentlength<50:
+        sampleLength = "Short"
+       
+    elif commentlength>=50 and commentlength<=100:
+        sampleLength = "Medium"
 
-
+    else:
+        sampleLength = "Long"
+ 
 
     if commentLikes[counter].get_text() == "":
-        writer.writerow([commentlength, "0 Like", date[counter].get_text(),sampleComment])
+        
+        writer.writerow([commentlength, "0 Like", date[counter].get_text(),sampleComment, sampleLength])
     else:
         commentpostlike = commentLikes[counter].get_text()
-        writer.writerow([commentlength, commentpostlike, date[counter].get_text(), sampleComment])
+        writer.writerow([commentlength, commentpostlike, date[counter].get_text(), sampleComment, sampleLength])
 
     counter= counter+1
 

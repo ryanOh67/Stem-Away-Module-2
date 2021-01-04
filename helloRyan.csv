@@ -1,26 +1,26 @@
-Length,Likes,Date,Post
+Length,Likes,Date,Post,LengthofContent
 44,2 Likes,"
                 September 10, 2015,  2:15am
               ","
 We look forward to hearing from everyone! 
-"
+",Short
 47,2 Likes,"
                 September 23, 2015,  6:58am
               ","
 Nice to see that we bet on the right project 
-"
+",Short
 98,1 Like,"
                 June 3, 2016,  4:23pm
               ","
 A very lovely introduction!  I am new to the community and hope to make relevant contributions.!
-"
+",Medium
 38,1 Like,"
                 February 21, 2017,  9:11am
               ","
 Nice work guys…
 keep it up…
 regards.
-"
+",Short
 208,0 Like,"
                 September 9, 2017,  1:00pm
               ","
@@ -28,13 +28,13 @@ I bought my mark a few months ago. I didn’t have time to play with it, but I w
 Is there a release schedule for updates?
 Is there how to page?
 Can I add skills to it that I wrote?
-"
+",Long
 356,0 Like,"
                 September 11, 2017,  3:12pm
               ","
 You can find docs on the mycroft right here. Release schedule for update is biweekly, usually on thursdays. You should expect a new update this thursday. To allow other people to install your skills either using MSM (mycroft skills manager) or the install skills skill, you can do a pull request on this repo, to add your skill on there.
 Hope this helps!
-"
+",Long
 60,1 Like,"
                 October 12, 2018, 10:27am
               ","
@@ -47,7 +47,7 @@ Mycroft
 
 
 Really love the incredible project!
-"
+",Medium
 1504,1 Like,"
                 December 21, 2018,  7:53pm
               ","
@@ -56,7 +56,7 @@ I found out about Mycroft through the Plexpod community in KC. I work for a glob
 The platform we use for EMR is called OpenMRS. Users include country governments, NGOs, and private hospital systems. The platform is used in over 60 countries, with millions of patient records. One of the biggest challenges in moving from a “retrospective” to a “point-of-care” data collection model is the burden and interruption of workflow to clinicians who are already burdened with paperwork. In many countries, the government requires paperwork and the EMR data is supplemental.
 I hope that somewhere out in the OpenMRS ecosystem, there is someone who would want to test Mycroft AI running on the same laptop or tablet that is running their EMR application. My organization is not positioned to do this yet, because the locations where we work are too rural and internet bandwidth is a constraint. But I hope that this idea might catch someone’s idea, and might take hold somewhere else in the world.
 Please feel free to reach out for more information or you can join the OpenMRS community directly if you are a developer who is looking for an opportunity to begin the discussion about integrating voice with health data.
-"
+",Long
 861,4 Likes,"
                 January 6, 2019,  5:07pm
               ","
@@ -67,13 +67,13 @@ I have solar panels on my home, they are grid-tied through a Solar Edge inverter
 https://monitoringpublic.solaredge.com/solaredge-web/p/kiosk?guid=3d71e75a-b8cb-48ef-8d00-6f36fd077737
 I’m looking forward to seeing how far I can get.  Wish me luck!
 ~Eric
-"
+",Long
 27,0 Like,"
                 February 1, 2019,  2:06pm
               ","
 Great Job Guys…
 Well Done
-"
+",Short
 215,0 Like,"
                 July 3, 2020, 10:07am
               ","
@@ -83,4 +83,4 @@ Not (still) a user. I will see if I can contribute in French.
 Use MyCroft with Ubuntu and soon with RPi 3+ :).
 Best Regards, jrd10
 tricassinux.org
-"
+",Long
