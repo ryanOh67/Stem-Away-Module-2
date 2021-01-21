@@ -50,12 +50,13 @@ res1311 = accuracy_score(y_pred, y_test)
 #print(classification_report(y_test, y_pred,labels =['Short', 'Medium', 'Long'], target_names=my_categories)) #define my_categories
 
 
-
-
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.6, random_state = 50)
+X_train.head()  
+y_train.head()
 
 sgd = Pipeline([('vect', CountVectorizer()),
                 ('tfidf', TfidfTransformer()),
-                 ('clf', SGDClassifier(loss='hinge', penalty='l2',alpha=1e-3, random_state=50, max_iter=5, tol=None)),
+                 ('clf', SGDClassifier(loss='hinge', penalty='l2',alpha=1e-3, random_state=50, max_iter=6, tol=None)),
                ])
 
 sgd.fit(X_train, y_train)
@@ -75,7 +76,9 @@ res1321 = sgd.score(y_pred, y_test)
 
 
 from sklearn.linear_model import LogisticRegression
-
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.6, random_state = 50)
+X_train.head()  
+y_train.head()
 logreg = Pipeline([('vect', CountVectorizer()),
                 ('tfidf', TfidfTransformer()),
                 ('clf', LogisticRegression(n_jobs=1, C=1e5)),
@@ -86,8 +89,9 @@ y_pred = logreg.predict(X_test)
 res2331 = logreg.score(y_pred, y_test)
 
 
-
-
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.6, random_state = 50)
+X_train.head()  
+y_train.head()
 dtree = Pipeline([('vect', CountVectorizer()),
                 ('tfidf', TfidfTransformer()),
                 ('clf', DecisionTreeClassifier(random_state=0)),
